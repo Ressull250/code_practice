@@ -4,30 +4,20 @@ class Solution:
         :type n: int
         :rtype: List[str]
         """
-        ret = self.parenttheses(n)
-        ret = list(ret)
-        print(ret)
+        ret = list()
+        self.backtrack(ret, '', 0, 0, n)
         return ret
 
-    def parenttheses(self, n):
-        if n == 4:
-            return {"(((())))","((()()))","((())())","((()))()","(()(()))","(()()())","(()())()","(())(())","(())()()","()((()))","()(()())","()(())()","()()(())","()()()()"}
-        elif n == 2:
-            return {'()()','(())'}
-        elif n == 1: 1
-            return {'()'}
-        else:
-            strs = self.parenttheses(n-1)
-            ret = set()
-            for s in strs:
-                ret.add('()'+s)
-                ret.add(s+'()')
-                ret.add('('+s+')')
-        return ret
+    def backtrack(self, list, str, open, close, max):
 
-list3 = set(Solution().generateParenthesis(1))
-list1 = {"()(()())","()(())()","(()())()","((()))()","()((()))","(()()())","(((())))","()()(())","()()()()","((()()))","((())())","(())()()","(()(()))"}
+        if len(str) == 2*max:
+            list.append(str)
+            return
 
-list2 = {"(((())))","((()()))","((())())","((()))()","(()(()))","(()()())","(()())()","(())(())","(())()()","()((()))","()(()())","()(())()","()()(())","()()()()"}
+        if open < max:
+            self.backtrack(list, str+'(', open+1, close, max)
+        if close < open:
+            self.backtrack(list, str+')', open, close+1, max)
 
-print(list2-list3)
+
+print(Solution().generateParenthesis(1))

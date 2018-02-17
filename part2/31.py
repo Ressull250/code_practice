@@ -33,4 +33,6 @@ class Solution:
         return
 
 
+
+
 print(Solution().nextPermutation([1,2,3]))

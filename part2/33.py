@@ -8,7 +8,7 @@ class Solution:
         """
         l,r = 0,len(nums)-1
         while l<=r:
-            mid = l+(l-r)//2
+            mid = l+(r-l)//2
             num = nums[mid] if (target<nums[0]) == (nums[mid]<nums[0]) \
                     else (sys.maxsize if target>nums[0] else -sys.maxsize)
 

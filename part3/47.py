@@ -1,5 +1,5 @@
 class Solution:
-    def permute(self, nums):
+    def permuteUnique(self, nums):
         """
         :type nums: List[int]
         :rtype: List[List[int]]
@@ -11,7 +11,8 @@ class Solution:
 
     def recurs(self, nums, lists, cnums):
         if len(nums) == 1:
-            lists.append(cnums+nums)
+            if cnums+nums not in lists:
+                lists.append(cnums+nums)
         else:
             for i in range(len(nums)):
                 t = nums.copy()

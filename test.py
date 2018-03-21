@@ -1,5 +1,10 @@
 
 
-list = [2,3,4,5]
-for i,num in enumerate(list,9):
-    print(num)
+def comp(a,b):
+    if a>b: return 1
+    else: return -1
+
+list1 = [1,23,0]
+list1.sort(comp)
+print(list1)
+

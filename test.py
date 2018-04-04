@@ -8,3 +8,5 @@ list1 = [1,23,0]
 list1.sort(comp)
 print(list1)
 
+print 328%13
+

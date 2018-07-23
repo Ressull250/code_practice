@@ -26,4 +26,5 @@ class Solution(object):
 
 
 
+
 print(Solution().numDecodings('101'))

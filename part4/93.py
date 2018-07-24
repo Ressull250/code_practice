@@ -22,5 +22,3 @@ class Solution(object):
                 return
             if int(s[0:i+1]) <= 255:
                 self.find(s[i+1:], this+[s[0:i+1]], res)
-
-print Solution().restoreIpAddresses("010010")

@@ -11,5 +11,3 @@ class Solution(object):
                 ans[j] = res[i-2][j-1] + res[i-2][j]
             res.append(ans)
         return res[-1]
-
-

@@ -23,3 +23,4 @@ class Solution(object):
         bfs(root, 0, t)
         return t[0]
 
+

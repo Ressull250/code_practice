@@ -24,5 +24,3 @@ class Solution(object):
         else:
             res.append(str(start) + "->" + str(last))
         return res
-
-

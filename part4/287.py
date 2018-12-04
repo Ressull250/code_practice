@@ -1,5 +1,5 @@
 class Solution(object):
-    def findDuplicate(self, nums):
+    def findDuplicate0(self, nums):
         """
         :type nums: List[int]
         :rtype: int
@@ -10,3 +10,18 @@ class Solution(object):
                 return i
             else:
                 s.add(i)
+
+    def findDuplicate(self, nums):
+        slow = nums[0]
+        fast = nums[nums[0]]
+        while slow != fast:
+            slow = nums[slow]
+            fast = nums[nums[fast]]
+
+        fast = 0
+        while slow != fast:
+            fast = nums[fast]
+            slow = nums[slow]
+        return fast
+
+print Solution().findDuplicate([3,1,3,4,2])
